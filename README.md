@@ -57,5 +57,12 @@ define('WP_HOME','http://wordpress.local');
 define('WP_SITEURL','http://wordpress.local');
 ```
 
+### Scripts
+```
+# To dump MySQL 
+$ bash utils/dump.sh
+```
+
+
 [prs-badge]: https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square
 [prs]: http://makeapullrequest.com

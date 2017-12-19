@@ -1,0 +1,39 @@
+version: '2.1'
+
+services:
+  wordpress:
+    container_name: wordpress
+    image: wordpress
+    ports:
+      - 127.0.0.1:80:80
+    volumes:
+      - ./docker/php/php.conf.uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
+      - ./src:/var/www/html
+    environment:
+      WORDPRESS_DB_HOST: mydb.mysql.db
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DB_USER: rimiti
+      WORDPRESS_DB_PASSWORD: password
+    depends_on:
+      - mydb.mysql.db
+    networks:
+      - wordpress-network
+
+  mydb.mysql.db:
+    container_name: mydb.mysql.db
+    image: mysql
+    ports:
+      - 127.0.0.1:3306:3306
+    volumes:
+      - ./docker/dump:/docker-entrypoint-initdb.d
+    environment:
+      MYSQL_USER: rimiti
+      MYSQL_PASSWORD: password
+      MYSQL_DATABASE: wordpress
+      MYSQL_ROOT_PASSWORD: password
+    networks:
+      - wordpress-network
+
+networks:
+  wordpress-network:
+      driver: bridge

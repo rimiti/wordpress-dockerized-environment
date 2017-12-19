@@ -21,6 +21,16 @@ Before whatever, make sure you have the latest versions of **Docker** and **Dock
 - Update database credentials in `docker-compose.yml` with your own values.
 - Run `docker-compose up`.
 
+## Ready
+There are two ways to access to your local WordPress:
+
+```
+# Directly from your local machine IP.
+http://127.0.0.1:80
+
+# From a local domain (cf: Utils/WordPress section), add below line in your /etc/hosts file.
+127.0.0.1 wordpress.local
+``` 
 
 ## Utils
 
@@ -49,7 +59,7 @@ $ docker-compose exec wordpress /bin/bash
 $ docker-compose exec mydb.mysql.db /bin/bash
 ```
 
-### Wordpress
+### WordPress
 
 To override the hostname without changing any data in your database add in your **wp-config.php** the below lines:
 ```

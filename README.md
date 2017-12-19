@@ -1,24 +1,24 @@
 # Wordpress Dockerized Environment
 [![PRs Welcome][prs-badge]][prs]
 
-This repository has for goal to simplify the creation of a docker-compose development environment. 
+This repository aims to simplify the setting up of a docker-compose development environment.
 
 ## Pre-requirements
 Before whatever, make sure you have the latest versions of **Docker** and **Docker Compose** installed on your machine.
-- [Docker] (https://docs.docker.com/engine/installation/)
-- [Docker Compose] (https://docs.docker.com/compose/install/)
+- [Docker](https://docs.docker.com/engine/installation/)
+- [Docker Compose](https://docs.docker.com/compose/install/)
 
 ## From a new project
 
-- [Download] (https://wordpress.org/latest.zip) latest WordPress version.
+- [Download](https://wordpress.org/latest.zip) latest WordPress version.
 - Unzip `wordpress-x.x.x.zip` archive.
 - Move all files present in the unzipped folder to `src/`
 - Run `docker-compose up`.
 
 ## From an existing project
 - Move all your files to `src/`.
-- Copy your SQL dump file to `docker/dump/`.
-- Update the database credentials in `docker-compose.yml` with your own values.
+- Copy the SQL dump file to `docker/dump/`.
+- Update database credentials in `docker-compose.yml` with your own values.
 - Run `docker-compose up`.
 
 

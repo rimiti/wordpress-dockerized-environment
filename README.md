@@ -4,7 +4,7 @@
 This repository aims to simplify the setting up of a docker-compose development environment.
 
 ## Pre-requirements
-Before whatever, make sure you have the latest versions of **Docker** and **Docker Compose** installed on your machine.
+First, make sure you have the latest versions of **Docker** and **Docker Compose** installed on your machine.
 - [Docker](https://docs.docker.com/engine/installation/)
 - [Docker Compose](https://docs.docker.com/compose/install/)
 

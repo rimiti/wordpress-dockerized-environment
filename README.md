@@ -22,6 +22,7 @@ First, make sure you have the latest versions of **Docker** and **Docker Compose
 - Run `docker-compose up`.
 
 ## Ready
+
 There are two ways to access to your local WordPress:
 
 ```
@@ -31,8 +32,6 @@ http://127.0.0.1:80
 # From a local domain (cf: Utils/WordPress section), add below line in your /etc/hosts file.
 127.0.0.1 wordpress.local
 ``` 
-
-## Utils
 
 ### Docker Compose
 

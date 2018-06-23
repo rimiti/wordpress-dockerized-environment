@@ -10,21 +10,22 @@ services:
       - ./docker/php/php.conf.uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
       - ./src:/var/www/html
     environment:
-      WORDPRESS_DB_HOST: mydb.mysql.db
+      WORDPRESS_DB_HOST: mydb.db
       WORDPRESS_DB_NAME: wordpress
       WORDPRESS_DB_USER: rimiti
       WORDPRESS_DB_PASSWORD: password
     depends_on:
-      - mydb.mysql.db
+      - mydb.db
     networks:
       - wordpress-network
 
-  mydb.mysql.db:
-    container_name: mydb.mysql.db
-    image: mysql
+  mydb.db:
+    container_name: mydb.db
+    image: library/mysql:5.7.22
     ports:
       - 127.0.0.1:3306:3306
     volumes:
+      - .:/website
       - ./docker/dump:/docker-entrypoint-initdb.d
     environment:
       MYSQL_USER: rimiti
